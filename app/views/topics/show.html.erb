@@ -1,0 +1,6 @@
+<h2><%= @topic.name %></h2>
+<ul>
+<% @topic.conversations.order(updated_at: :desc).each do |conv| %>
+  <li><%= link_to conv.name, conversation_path(conv) %></li>
+<% end %>
+</ul>
