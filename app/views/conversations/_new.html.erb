@@ -1,0 +1,11 @@
+<div>
+  <%= form_for @conversation do |f|%>
+    <%= f.hidden_field :user_id, value: current_user.id %>
+    <%= f.hidden_field :topic_id, value: @topic.id %>
+    <div>
+      <%= f.label :name %>
+      <%= f.text_field :name%>
+    </div>
+    <%= f.submit %>
+  <% end %>
+</div>

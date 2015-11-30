@@ -7,9 +7,13 @@ Rails.application.routes.draw do
 
   get 'categories/show' => 'categories#show'
 
+  resource  :sessions, only: [:create]
+  resources :users, only: [:new, :create]
   resources :topics
   resources :conversations
 
+  get 'login' => 'sessions#new'
+  get 'logout' => 'sessions#destroy'
   get 'messages/new' => 'messages#new'
   post 'messages' => 'messages#create'
 

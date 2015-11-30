@@ -4,5 +4,8 @@
 
 <%= render @conversation.messages %>
 
-<%= render 'messages/new' %>
-
+<% if logged_in? %>
+  <%= render 'messages/new' %>
+<% else %>
+  LOG IN TO COMMENT BRUH
+<% end %>

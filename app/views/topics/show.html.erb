@@ -4,3 +4,9 @@
   <li><%= link_to conv.name, conversation_path(conv) %></li>
 <% end %>
 </ul>
+
+<% if logged_in? %>
+  <div>
+    <%= render 'conversations/new' %>
+  </div>
+<% end %>
