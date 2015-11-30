@@ -1,4 +1,19 @@
 <h2><%= @topic.name %></h2>
+
 <div>
-  <%= render @topic.conversations %>
+  <h3>Recently Updated</h3>
+  <% @recent_convos.each do |convo| %>
+  <div>
+    <%= link_to convo.name, conversation_path(convo) %>
+  </div>
+  <% end %>
+</div>
+
+<div>
+  <h3>Archived Conversations</h3>
+  <% @old_convos.each do |convo| %>
+  <div>
+    <%= link_to convo.name, conversation_path(convo) %>
+  </div>
+  <% end %>
 </div>
