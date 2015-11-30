@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+  <div>
+    <%= link_to 'login', login_path %>
+    <%= link_to 'register', new_user_path %>
+  </div>
+</header>
 <%= yield %>
 
 </body>
