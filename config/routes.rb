@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   resources :topics
   resources :conversations
   resources :messages
+  resource :session, only: [:create, :destroy, :new]
 
   resources :users
   get '/login' => 'sessions#new'

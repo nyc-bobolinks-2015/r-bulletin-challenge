@@ -1,16 +1,18 @@
 
-<%= form_tag url: new_user_path do %>
+<%= form_for @user do |f| %>
   <div>
-    <%= label_tag :username %>
-    <%= text_field_tag :username %>
-  </div>
-    <%= label_tag :email %>
-    <%= email_field_tag :email %>
-  <div>
-    <%= label_tag :password %>
-    <%= password_field_tag :password %>
+    <%= f.label :username %>
+    <%= f.text_field :username %>
   </div>
   <div>
-    <%= submit_tag 'Register' %>
+    <%= f.label :email %>
+    <%= f.email_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.submit 'Register' %>
   </div>
 <% end %>
