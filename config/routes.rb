@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   resources :topics
-  resources :conversations
-  resources :messages
+  resources :conversations do
+    resources :messages
+  end
   resource :session, only: [:create, :destroy, :new]
 
   resources :users

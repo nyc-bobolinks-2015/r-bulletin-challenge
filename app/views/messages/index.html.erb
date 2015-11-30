@@ -1,0 +1,11 @@
+<h1><%= @conversation.name %></h1>
+
+<% @conversation.messages.each do |message| %>
+  <p><%= link_to message.get_message_intro, conversation_message_path(@conversation, message) %></p>
+<% end %>
+
+
+<% if logged_in? %>
+  <%= link_to "Add message", new_conversation_message_path(@conversation)  %>
+<% end %>
+
