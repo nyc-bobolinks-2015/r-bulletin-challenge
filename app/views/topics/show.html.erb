@@ -2,18 +2,10 @@
 
 <div>
   <h3>Recently Updated</h3>
-  <% @recent_convos.each do |convo| %>
-  <div>
-    <%= link_to convo.name, conversation_path(convo) %>
-  </div>
-  <% end %>
+  <%= render @recent_convos %>
 </div>
 
 <div>
   <h3>Archived Conversations</h3>
-  <% @old_convos.each do |convo| %>
-  <div>
-    <%= link_to convo.name, conversation_path(convo) %>
-  </div>
-  <% end %>
+  <%= render @old_convos %>
 </div>
