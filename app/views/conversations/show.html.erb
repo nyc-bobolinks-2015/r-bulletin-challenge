@@ -1,0 +1,17 @@
+<h1>Conversations Listing</h1>
+<ul id = "messages-list">
+  <%@messages.each do |message|%>
+  <li><%=message.content%></li>
+  <%end%>
+</ul>
+
+<% if session[:user_id]%>
+<div id = "new-messages-form">
+  <div id = "new-message">
+    <%= link_to "Create Message",new_conversation_message_path(@conversation),id:"add_message"%>
+  </div>
+</div>
+<%else%>
+<%= link_to "Login to Post Message",login_path%>
+<%end%>
+

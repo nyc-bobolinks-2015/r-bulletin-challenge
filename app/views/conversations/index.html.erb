@@ -1,0 +1,21 @@
+
+<h1><%=@topic.name%>'s conversations</h1>
+<ul id="conversation_list">
+  <%@conversations.each do |conversation|%>
+    <li><%= link_to conversation.name, conversation_path(conversation) %></li>
+  <%end%>
+</ul>
+
+<% if session[:user_id]%>
+  <% if flash[:error]%>
+    <%=flash[:error]%>
+  <%end%>
+
+  <div id="top_new_conversation_form">
+    <div id="new_conversation_form_div">
+      <%= link_to "Create Conversation",new_topic_conversation_path(@topic),id:"add_conversation"%>
+    </div>
+  </div>
+<%else%>
+  <%= link_to "Login to Post Message",login_path%>
+<%end%>

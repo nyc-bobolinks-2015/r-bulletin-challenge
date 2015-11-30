@@ -1,0 +1,13 @@
+<h1> Conversations</h1>
+<ul>
+  <% @conversations.each do |conversation| %>
+  <li><%= conversation.name%></li>
+  <% end %>
+</ul>
+
+<h1> Messages </h1>
+<ul>
+  <% @messages.each do |message| %>
+  <li><%= message.content%></li>
+  <% end %>
+</ul>
