@@ -10,8 +10,9 @@
   <header>
     <nav>
       <ul>
+        <li> <%= link_to "home", root_path %> </li>
         <% if logged_in? %>
-          <li> <%= current_user.username.downcase %> </li>
+          <li> <%= link_to current_user.username.downcase, user_path(current_user) %> </li>
           <li> <%= link_to "logout", logout_path %> </li>
         <% else %>
           <li> <%= link_to "register", new_user_path %> </li>

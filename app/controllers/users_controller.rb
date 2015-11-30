@@ -14,7 +14,14 @@ class UsersController < ApplicationController
     end
   end
 
-private
+  def show
+    @user = current_user
+    @recent_messages = @user.recent_messages
+    @conversations = @user.conversations
+
+  end
+
+  private
 
   def user_params
     params.require(:user).permit(:username, :email, :password)

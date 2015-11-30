@@ -1,0 +1,17 @@
+<h3>Messages</h3>
+<div>
+  <ul>
+  <% @recent_messages.each do |msg| %>
+    <li> <%= link_to msg.content, conversation_path(msg.conversation) %> </li>
+  <% end %>
+  </ul>
+</div>
+
+<h3>Conversations</h3>
+<div>
+  <ul>
+  <% @conversations.each do |conv| %>
+    <li> <%= link_to conv.name, conversation_path(conv) %> </li>
+  <% end %>
+  </ul>
+</div>

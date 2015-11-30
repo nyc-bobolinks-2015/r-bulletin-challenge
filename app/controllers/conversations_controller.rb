@@ -15,9 +15,4 @@ class ConversationsController < ApplicationController
     end
   end
 
-  # private
-
-  # def conversation_params
-  #   params.require(:conversation).permit(:name)
-  # end
 end

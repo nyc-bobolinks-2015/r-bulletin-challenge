@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   get 'categories/show' => 'categories#show'
 
   resource  :sessions, only: [:create]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   resources :topics
   resources :conversations
 
