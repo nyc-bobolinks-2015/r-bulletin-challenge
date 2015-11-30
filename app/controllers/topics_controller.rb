@@ -2,6 +2,7 @@ class TopicsController < ApplicationController
 
   def index
     @categories = Category.all
+    @conversations = Conversation.all
   end
 
   def show

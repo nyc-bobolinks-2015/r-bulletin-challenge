@@ -1,0 +1,16 @@
+
+<%= form_tag url: new_user_path do %>
+  <div>
+    <%= label_tag :username %>
+    <%= text_field_tag :username %>
+  </div>
+    <%= label_tag :email %>
+    <%= email_field_tag :email %>
+  <div>
+    <%= label_tag :password %>
+    <%= password_field_tag :password %>
+  </div>
+  <div>
+    <%= submit_tag 'Register' %>
+  </div>
+<% end %>
