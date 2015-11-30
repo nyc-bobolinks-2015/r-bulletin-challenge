@@ -9,8 +9,12 @@
 <body>
 <header>
   <div>
+    <% if logged_in? %>
+    <%= link_to 'logout', logout_path %>
+    <% else %>
     <%= link_to 'login', login_path %>
     <%= link_to 'register', new_user_path %>
+    <% end %>
   </div>
 </header>
 <%= yield %>
