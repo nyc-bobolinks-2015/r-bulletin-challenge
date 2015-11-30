@@ -1,0 +1,5 @@
+<h1><%= @conversation.name %></h1>
+
+<% @conversation.messages.each do |message| %>
+  <p><%= link_to message.get_message_intro, message_path(message) %></p>
+<% end %>
