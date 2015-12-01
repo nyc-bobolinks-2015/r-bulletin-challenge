@@ -1,5 +1,9 @@
 <h1><%= @topic.name %></h1>
 
+<% if logged_in? %>
+<h5 class="add-conversation-button"><%= link_to "Add new conversation", new_topic_conversation_path(@topic) %></h5>
+<% end %>
+
 <% @topic.conversations.each do |convo| %>
   <h3><%= link_to convo.name, conversation_messages_path(convo) %></h3>
 <% end %>

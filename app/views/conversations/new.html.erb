@@ -1,0 +1,7 @@
+<h1>Create a new conversation:</h1>
+
+<%= form_for [@topic, @conversation] do |f| %>
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+  <%= f.submit "Start a conversation" %>
+<% end %>
