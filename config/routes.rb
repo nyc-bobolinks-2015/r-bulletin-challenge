@@ -1,9 +1,22 @@
 Rails.application.routes.draw do
+  resources :topics do
+    resources :conversations
+  end
+
+  resources :conversations do
+    resources :messages
+  end
+  resource :session, only: [:create, :destroy, :new]
+
+  resources :users
+  get '/login' => 'sessions#new'
+  get '/logout' => 'sessions#destroy'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+  root 'welcome#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

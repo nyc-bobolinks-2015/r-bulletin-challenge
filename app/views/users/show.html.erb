@@ -1,0 +1,11 @@
+<h1><%= @user.username %></h1>
+
+<h2>Conversations you started: </h2>
+<% @user.conversations.each do |c| %>
+  <h5><%= link_to c.name, conversation_messages_path(c) %></h5>
+<% end %>
+
+<h2>Your recent messages</h2>
+<% @user.get_recent_messages.each do |m| %>
+  <h5><%= m.content %></h5>
+<% end %>
