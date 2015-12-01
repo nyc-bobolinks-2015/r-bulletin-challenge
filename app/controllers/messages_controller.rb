@@ -11,7 +11,11 @@ class MessagesController < ApplicationController
     @message = Message.new(message_params)
     @conversation = Conversation.find(params[:message][:conversation_id])
     if @message.save
-      redirect_to conversation_path(@conversation)
+      if request.xhr?
+        render partial: "message" , locals: {message: @message}
+      else
+        redirect_to conversation_path(@conversation)
+      end
     else
 
     end
