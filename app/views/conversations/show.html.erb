@@ -1,0 +1,11 @@
+<h2><%= @conversation.name %></h2>
+<div>
+  <%= render @conversation.messages %>
+</div>
+
+<%= form_tag message_create_path do %>
+<input type="hidden" name="conversation_id" value="<%= @conversation.id %>"/>
+<%= label_tag 'Your Message:'%>
+<%= text_area_tag :content %>
+<%= submit_tag 'post it!' %>
+<% end %>
