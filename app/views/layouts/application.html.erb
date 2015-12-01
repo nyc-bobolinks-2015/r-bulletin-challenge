@@ -10,7 +10,7 @@
 <header>
   <div>
     <% if logged_in? %>
-    <p>Hey, <%= current_user.username %>
+    <p>Hey, <%= link_to current_user.username, user_path(current_user.id) %>
     | <%= link_to 'logout', logout_path %> </p>
     <% else %>
     <%= link_to 'login', login_path %>

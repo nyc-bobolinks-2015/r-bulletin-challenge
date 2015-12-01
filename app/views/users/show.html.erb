@@ -1,0 +1,7 @@
+<h2><%= current_user.username %></h2>
+<h3> Your messages:</h3>
+<%= render @messages %>
+
+
+<h3> Your conversations:</h3>
+<%= render current_user.conversations %>

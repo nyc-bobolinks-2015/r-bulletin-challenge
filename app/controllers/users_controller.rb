@@ -12,6 +12,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @messages = Message.recent(current_user)
+  end
+
   private
   def user_params
     params.require(:user).permit(:username, :email, :password)
