@@ -5,7 +5,8 @@ Rails.application.routes.draw do
   resources :session, only: [:create]
     get '/login' => 'session#new'
     get '/logout' => 'session#destroy'
-  resources :conversations
+  resources :conversations, except: [:create]
+  post '/conversation/create' => 'conversations#create'
   resources :messages, except: [:create]
   post '/message/create' => 'messages#create'
   # The priority is based upon order of creation: first created -> highest priority.
