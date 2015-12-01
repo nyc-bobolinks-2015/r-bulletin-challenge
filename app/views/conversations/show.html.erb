@@ -1,0 +1,15 @@
+<div class="conversation-name">
+  <%= @conversation.name %>
+</div>
+
+<div id="message-list">
+  <%= render @conversation.messages %>
+</div>
+
+<div id="new-message">
+  <% if logged_in? %>
+    <%= render 'messages/new' %>
+  <% else %>
+    LOG IN TO COMMENT BRUH
+  <% end %>
+</div>
