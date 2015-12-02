@@ -1,47 +1,35 @@
-# r-bulletin: like v-bulletin but not as complex
+# r-bulletin revisited: 
 
-## Learning Competencies
+##The story so far
 
-* Build a rails app from the ground up
-* Use rails nested routes
-* Use activerecord associations and delegation
-* Practice using form helpers and url helpers
-* Navigate a list of user stories and discuss/clarify requirements
+Our senior engineer is undisciplined and only does the work he feels like. He's implemented some of our application, but hasn't stuck to the release schedule. 
 
-## Summary
-We're going to build a fairly simple online forum system, similar to v-bulletin or phpBB or one of the many others of that ilk. But we'll build it from scratch.
+Our colleague has been fairly diligent about writing tests, and has set up [SimpleCov](https://github.com/colszowka/ simplecov) to generate code coverage reports from the tests. Run ```rake spec``` then look at the index.html file generated in the coverage folder.
 
-To get you started we have a number of models and tables already set up, but no routes, controllers or views. The full list of user stories is outlined below. See how far you get with this in a day. We'll revisit this app later in the phase, and use it as an example for our feature testing practice.
+Your job is to pick up the application and start adding new features to it. 
 
-##Getting started
-Clone this repo. cd into it and ```bundle install```. Then ```rake db:drop && rake db:create && rake db:migrate && rake db:seed```
+You should follow the user stories list below. The features struck through are already implemented. Your job is to do the others.
 
-Release 0: Implement the "as a visitor" user stories
+To get started clone this repo and check you are on the branch called wednesday. If you've cloned this repo before, clone it again into a new folder, as it's changed.
 
-Release 1: Implement registration and login.
+```bundle install``` the ```rake db:drop && rake db:create && rake db:migrate && rake db:seed``` The seeds will take a while as there's a decent volume of test data.
 
-Release 2: Allow logged in users to create new messages and conversations
-
-Release 3: Convert the functionality added in release 2 to use ajax
-
-Release 4: Implement the "watched conversation" user story, and the like button. 
-
-You have some models already set up. Some of your releases will require you to add columns to existing tables and perhaps add tables. Use new migrations for these changes - don't edit the old ones.
+Implement the remaining features. Keep the test coverage score at 100%
 
 User stories
 
 ###R0
-* As a visitor I want to see a list of topics
-* As a visitor I want to see a list of conversations in a topic
-* As a visitor I want to read a conversation (see the messages in it.)
+* ~~As a visitor I want to see a list of topics~~
+* ~~As a visitor I want to see a list of conversations in a topic~~
+* ~~As a visitor I want to read a conversation (see the messages in it.)~~
 * As a visitor I want to see a list of recently active conversations
 
 ###R1
-* As a visitor I want to register a new account with email, username and password
-* As a user I want to log in
+* ~~As a visitor I want to register a new account with email, username and password~~
+* ~~As a user I want to log in~~
 
 ###R2
-* As a logged in user, I want to add messages to existing conversations.
+* ~~As a logged in user, I want to add messages to existing conversations.~~
 * As a logged in user, I want to start new conversations in a topic.
 * As a logged in user, I want to see my most recent messages.
 * As a logged in user, I want to see conversations I started.
