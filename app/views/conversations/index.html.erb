@@ -1,4 +1,9 @@
 <h1>Conversations in <%= @topic.name %> </h1>
+
+<% if current_user %>
+  <p><%= link_to "Start a Conversation", new_topic_conversation_path %></p>
+<% end %>
+
 <ul>
 <%= render @conversations %>
 </ul>
