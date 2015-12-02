@@ -37,9 +37,9 @@ form {
     label {
       font-size: smaller;
       display: inline-block;
-      width:80px;
+      width:170px;
     }
-    input[type="text"] {
+    input[type="text"], input[type="password"]{
       width: 300px;
     }
     textarea {
