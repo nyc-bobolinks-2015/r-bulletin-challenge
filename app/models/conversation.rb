@@ -22,6 +22,10 @@ class Conversation < ActiveRecord::Base
     order(updated_at: :desc)
   end
 
+  def self.get_recently_active_convos
+    by_recency.limit(10)
+  end
+
   def self.with_no_messages
     includes(:messages).where(messages: {id:nil})
   end

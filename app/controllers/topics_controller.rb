@@ -1,6 +1,7 @@
 class TopicsController < ApplicationController
   def index
     @categories = Category.includes(:topics).order(:display_order)
+    @recent_conversations = Conversation.get_recently_active_convos
   end
 
   def show
