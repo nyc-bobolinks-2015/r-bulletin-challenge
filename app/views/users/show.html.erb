@@ -1,0 +1,15 @@
+<h2><%= @user.username %></h2>
+
+<h3>Conversations you started:</h3>
+<% @user.conversations.each do |convo| %>
+  <h4><%= link_to convo.name, topic_conversation_path(convo.topic, convo) %></h4>
+<% end %>
+
+<h3>Your Most Recent Messages:</h3>
+<% if @user.messages.count > 0 %>
+  <% @user.get_recent_messages.each do |msg| %>
+    <h4><%= msg.content %></h4>
+  <% end %>
+<% else %>
+  <h4>You have no recent messages.</h4>
+<% end %>

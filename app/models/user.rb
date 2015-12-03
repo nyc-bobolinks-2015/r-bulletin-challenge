@@ -3,4 +3,8 @@ class User < ActiveRecord::Base
   has_many :messages
   has_many :conversations
   validates :email, presence: true
+
+  def get_recent_messages
+    self.messages.order(created_at: :desc).limit(10)
+  end
 end

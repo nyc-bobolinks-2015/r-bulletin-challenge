@@ -13,8 +13,14 @@ class ConversationsController < ApplicationController
   end
 
   def new
-    @topic = Topic.find(params[:topic_id])
+    topic_id = params[:topic_id][0]
+    @topic = Topic.find(topic_id)
+    p @topic
     @conversation = Conversation.new
+
+    if request.xhr?
+      render partial: "form", locals: {topic: @topic, conversation: @conversation}
+    end
   end
 
   def create
