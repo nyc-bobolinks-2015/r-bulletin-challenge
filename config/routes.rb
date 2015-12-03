@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :api do
     resources :topics, only: [:index, :show] do
-      resources :conversations, only: [:index, :show]
+      resources :conversations, only: [:index, :show, :new, :create]
     end
     resources :messages, only: [:create]
     resource :sessions, only: [:create]
@@ -11,15 +11,16 @@ Rails.application.routes.draw do
   resource :sessions, only: [:create]
   resource :users, only: [:create]
   resources :topics, only: [:index, :show] do
-    resources :conversations, only: [:index, :show]
+    resources :conversations, only: [:index, :show, :new, :create]
   end
   resources :messages, only: [:create]
 
-  get 'conversations' => 'conversations#recent'
   root 'topics#index'
+  get 'conversations' => 'conversations#recent'
   get 'register' => 'users#new'
   get 'logout' => 'sessions#destroy'
   get 'login' => 'sessions#new'
+  post 'create_conversation' => 'conversations#create'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

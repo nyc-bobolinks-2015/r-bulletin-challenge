@@ -9,4 +9,9 @@ class Message < ActiveRecord::Base
   def in_caps
     content.upcase if content
   end
+
+  def self.my_recent(user)
+    where(user_id: user.id).order(updated_at: :desc).limit(5)
+  end
+
 end
