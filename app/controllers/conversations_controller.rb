@@ -29,7 +29,11 @@ class ConversationsController < ApplicationController
     @conversation.user_id = current_user.id
 
     if @conversation.save
-      redirect_to topic_conversations_path(@topic)
+      if request.xhr?
+        render partial: 'conversation', locals: {conversation: @conversation}
+      else
+        redirect_to topic_conversations_path(@topic)
+      end
     else
       render :'conversations/new'
     end
