@@ -20,9 +20,19 @@ $(document).ready(function(){
       method: 'get',
       url: $(event.target).attr('href')
     }).done(function(response){
-      $('#convo-form-link')
+      console.log(response)
+      $('#start-convo-link').hide()
+      $('#convo-form-div').append(response);
     }).fail(function(error){
       console.log(error);
     })
+  })
+
+  $('#convo-form-div').on('submit', '#new_conversation', function(event){
+
+  }).done(function(response){
+
+  }).fail(function(error){
+    console.log(error)
   })
 });
