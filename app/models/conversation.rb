@@ -19,11 +19,15 @@ class Conversation < ActiveRecord::Base
   end
 
   def self.by_recency
-    order(updated_at: :desc)
+    order(updated_at: :desc).limit(5)
   end
 
   def self.with_no_messages
     includes(:messages).where(messages: {id:nil})
+  end
+
+  def self.my_conversations(user)
+    where(user_id: user.id).order(updated_at: :desc).limit(5)
   end
 
 end

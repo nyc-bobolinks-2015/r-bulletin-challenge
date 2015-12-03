@@ -1,3 +1,7 @@
+<% if current_user %>
+  <%= render template: "conversations/recent" %>
+  <%= render template: "messages/recent" %>
+<% end %>
 <h1>Topics</h1>
 <% @categories.each do |cat| %>
   <h2><%= cat.name %></h2>
@@ -10,4 +14,3 @@
   </table>
   
 <% end %>
-
