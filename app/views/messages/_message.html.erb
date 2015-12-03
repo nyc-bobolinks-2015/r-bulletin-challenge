@@ -1,5 +1,13 @@
 <div class="message" data-id="m<%= message.id %>">
-  <div class="header">From  <span class="author"><%= message.username %></span> 
-  at <span class="timestamp"><%= message.created_at.to_formatted_s(:forum) %></span> </div>
+  <div class="header">From
+    <span class="author"><%= message.username %></span>
+  at
+    <span class="timestamp"><%= message.created_at.to_formatted_s(:forum) %></span>
+    <span class="score"><%= message.score %></span>
+    <% if current_user && !message.liked_by_user?(current_user)%>
+    <span class="like-button"><a href="/messages/<%= message.id %>/like">Like</a></span>
+    <% end %>
+  </div>
+
   <div class="body"><%= message.content %> </div>
 </div>

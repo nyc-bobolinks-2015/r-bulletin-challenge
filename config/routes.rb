@@ -11,10 +11,12 @@ Rails.application.routes.draw do
   resource :sessions, only: [:create]
   resource :users, only: [:create]
   resources :topics, only: [:index, :show] do
-    resources :conversations, only: [:index, :show]
+    resources :conversations, only: [:index, :show, :create]
   end
   resources :messages, only: [:create]
 
+  get 'messages/:id/like' => 'messages#like'
+  get 'users/:id' => 'users#show', as: :user
   get 'conversations' => 'conversations#recent'
   root 'topics#index'
   get 'register' => 'users#new'

@@ -82,7 +82,7 @@ div#conversation {
   }
   div.message {
     margin: 5px 0;
-    
+
     .header {
       background-color: $heading-bg-sec;
       padding: 4px 0;
@@ -97,6 +97,25 @@ div#conversation {
       padding-bottom: 10px;
 
     }
+  }
+}
+
+div.message {
+  margin: 5px 0;
+
+  .header {
+    background-color: $heading-bg-sec;
+    padding: 4px 0;
+    .author {
+      font-weight: bolder;
+    }
+    .timestamp {
+      font-style: italic;
+    }
+  }
+  .body {
+    padding-bottom: 10px;
+
   }
 }
 
