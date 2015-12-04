@@ -1,4 +1,11 @@
 <h1>Conversations in <%= @topic.name %> </h1>
-<ul>
-<%= render @conversations %>
+
+<% if current_user %>
+  <div id="convo-form-div">
+    <p><%= link_to "Start a Conversation", new_topic_conversation_path, id: "start-convo-link"%></p>
+  </div>
+<% end %>
+
+<ul id='conversation-list'>
+  <%= render @conversations %>
 </ul>

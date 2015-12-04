@@ -8,6 +8,20 @@
     </tr>
     <%= render cat.topics %>
   </table>
-  
+
 <% end %>
 
+<h1>Recently Active Conversations</h1>
+<table class="convo_list">
+
+    <tr>
+      <th class="topic_name">Conversation Name</th>
+      <th class="topic_post">Updated At</th>
+    </tr>
+    <% @recent_conversations.each do |convo| %>
+      <tr>
+        <td class="name"><%= link_to convo.name, topic_conversation_path(convo.topic, convo) %></td>
+        <td class="post"><%= convo.updated_at.to_formatted_s(:forum) %></td>
+      </tr>
+    <% end %>
+ </table>

@@ -1,8 +1,12 @@
 class MessagesController < ApplicationController
   def create
-    msg = Message.create(message_params)
+    msg = Message.new(message_params)
     if msg.save
-      redirect_to topic_conversation_path(msg.conversation.topic, msg.conversation)
+      if request.xhr?
+        render partial: "message", locals: {message: msg}
+      else
+        redirect_to topic_conversation_path(msg.conversation.topic, msg.conversation)
+      end
     else
       @conversation = Conversation.find(params[:message][:conversation_id])
       flash.now.alert = msg.errors.full_messages.join(', ')

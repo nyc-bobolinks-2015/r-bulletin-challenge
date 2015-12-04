@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   end
 
   resource :sessions, only: [:create]
-  resource :users, only: [:create]
+  resources :users, only: [:create, :show]
   resources :topics, only: [:index, :show] do
-    resources :conversations, only: [:index, :show]
+    resources :conversations, only: [:index, :show, :new, :create]
   end
   resources :messages, only: [:create]
 
