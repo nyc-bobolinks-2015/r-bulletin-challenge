@@ -35,7 +35,7 @@ $(document).ready(function(){
       url: $(event.target).attr('action'),
       data: $(event.target).serialize()
     }).done(function(response){
-      $('#conversation-list').prepend();
+      $('#conversation-list').prepend(response);
       $('#new_conversation').remove();
       $('#start-convo-link').show();
   }).fail(function(error){
